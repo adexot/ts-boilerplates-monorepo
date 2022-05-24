@@ -1,5 +1,5 @@
 {
-  "name": "@react-node-monorepo/client",
+  "name": "@deversifi/client",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,17 +11,17 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
     "rimraf": "^3.0.2",
     "sass": "^1.27.0",
-    "typescript": "^4.0.3"
+    "parcel": "^2.5.0"
   }
 }
