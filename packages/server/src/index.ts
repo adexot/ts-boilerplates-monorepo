@@ -2,19 +2,21 @@ import express from 'express';
 import registerRoutes from './routes';
 import handleHealthCheck from './utilities/handleHealthCheck';
 import logger from './utilities/logger.util';
+import requestLogger from './utilities/requestLogger';
 
 const PORT = 8081;
 const app = express();
 
 async function startServer() {
-  app.use(express.json()); // for parsing application/json
-  app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+  // parse application/json header
+  app.use(express.json());
+  // parse application/x-www-form-urlencoded header
+  app.use(express.urlencoded({ extended: true }));
+  // log incoming request to the server
+  app.use(requestLogger);
 
   // default path for the API
   app.get('/', (req, res) => {
-    // TODO: refactor this out to a middleware for simplicity
-    // - log every route hit
-    logger.info('hitting the root path => /');
     res.send('Welcome to the react-node-monorepo');
   });
 
