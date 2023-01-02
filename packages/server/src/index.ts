@@ -1,5 +1,6 @@
 import express from 'express';
 import registerRoutes from './routes';
+import handleHealthCheck from './utilities/handleHealthCheck';
 import logger from './utilities/logger.util';
 
 const PORT = 8081;
@@ -11,10 +12,13 @@ async function startServer() {
 
   // default path for the API
   app.get('/', (req, res) => {
-    // refactor this out to a middleware for simplicity
+    // TODO: refactor this out to a middleware for simplicity
+    // - log every route hit
     logger.info('hitting the root path => /');
     res.send('Welcome to the react-node-monorepo');
   });
+
+  app.get('/health', handleHealthCheck);
 
   // api routes register
   registerRoutes(app);
