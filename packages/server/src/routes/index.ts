@@ -3,5 +3,5 @@ import orderRoutes from './order';
 
 /** Route register handler */
 export default function registerRoutes(app: Application): void {
-  app.use('/', orderRoutes);
+  app.use('/order', orderRoutes);
 }

@@ -1,6 +1,8 @@
 import * as winston from 'winston';
 import path from 'path';
 
+export type Logger = winston.Logger;
+
 /** Log handler */
 const logger: winston.Logger = winston.createLogger({
   level: 'info',

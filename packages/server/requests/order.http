@@ -1,0 +1,13 @@
+# Order endpoints
+
+GET http://localhost:8081/order/ HTTP/1.1
+
+###
+
+POST http://localhost:8081/order/deposit HTTP/1.1
+content-type: application/json
+
+{
+    "amount": 2000,
+    "token": "ETH"
+}
