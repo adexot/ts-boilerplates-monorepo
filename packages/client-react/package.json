@@ -1,5 +1,5 @@
 {
-  "name": "@deversifi/client",
+  "name": "@deversifi/client-react",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
